@@ -254,12 +254,58 @@ license: MIT
 如果你认为某部分信息缺失影响较大，可在 PRD 文末统一追加：
 - 待确认项
 
+## Working with existing business logic
+
+当用户提供现有 PRD、历史方案、流程说明或会议纪要时，你必须先把这些资料当作“当前业务逻辑的输入源”，再撰写新需求。
+
+### Mandatory rules for reference PRDs
+1. 参考 PRD、历史方案、流程说明 **只用于理解现状业务逻辑，不是最终交付物的一部分**。
+2. 最终产出的新 PRD **必须独立成文**，不能把参考 PRD 与新 PRD 混写在同一正文结构中。
+3. 若需要引用现状，只能用概括性方式写入，例如：
+   - 当前业务逻辑说明
+   - 本次改动与现状的关系
+   - 新旧逻辑差异
+   不能大段拼贴参考 PRD 原文。
+4. 若用户提供多份历史资料，先依据 `references/current-state-summary-template.md` 提炼“现状业务逻辑摘要”，再开始写新 PRD。
+5. 若用户未要求展示中间分析过程，可在内部完成现状摘要；最终只交付独立的新 PRD 正文。
+6. 若用户明确要求展示参考分析，则需严格分段输出：
+   - 第一部分：现状业务逻辑摘要（中间分析）
+   - 第二部分：新 PRD 正文（最终交付）
+
 ## Reference files
 
 写作时优先参考：
 - `references/prd-template.md`
 - `references/input-checklist.md`
+- `references/context-reading-guide.md`
+- `references/current-state-summary-template.md`
+- `references/current-state-summary-template.md`
+
+处理原则：
+1. 先提炼现状业务逻辑摘要，再写新需求
+2. 先识别受影响范围，再写方案细节
+3. 新 PRD 要强调与现有逻辑的关系：新增 / 修改 / 替换 / 并存
+4. 如涉及历史数据、历史流程、历史角色，必须说明兼容或迁移方式
+5. 若资料版本不明或相互冲突，明确标注“基于现有资料判断”并列入待确认项
+
+若资料较长，可先输出一段简短的：
+- 现状业务逻辑摘要
+- 本次需求受影响范围
+- 待确认点
+
+相关方法参考：
+- `references/context-reading-guide.md`
+
+## Reference files
+
+写作时优先参考：
+- `references/prd-template.md`
+- `references/input-checklist.md`
+- `references/context-reading-guide.md`
+- `references/current-state-summary-template.md`
 - `examples/label-management-prd.md`
+- `examples/approval-workflow-config-prd.md`
+- `examples/role-permission-management-prd.md`
 
 ## Example invocation
 
@@ -269,3 +315,30 @@ license: MIT
 你的输出：
 - 若信息足够：直接交付完整 PRD
 - 若信息不足：先补关键问题，再交付 PRD
+
+## Writing style reference
+
+写作时优先参考：
+- `references/writing-style.md`
+- `examples/label-management-prd.md`
+- `examples/approval-workflow-config-prd.md`
+- `examples/role-permission-management-prd.md`
+
+若参考写法与用户明确要求冲突，以用户要求为准。
+
+## Existing-business-logic module usage
+
+当用户要求“结合现有业务逻辑写新 PRD”时，优先参考：
+- `references/context-reading-guide.md`
+- `references/current-state-summary-template.md`
+- `references/current-state-usage.md`
+
+你可按以下三种模式工作：
+1. 内部完成现状理解后，直接输出独立的新 PRD
+2. 先输出《现状业务逻辑摘要》，再输出独立的新 PRD
+3. 只输出《现状业务逻辑摘要》，暂不写新 PRD
+
+无论哪种模式，都必须遵守：
+- 参考 PRD 只用于参考
+- 最终新 PRD 必须独立成文
+- 不把参考 PRD 与新 PRD 混写
